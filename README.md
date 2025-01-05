@@ -10,7 +10,7 @@ Write a C++ program with the following specifications:
 > b.	Minimum overtime hours is 1 hour.
 5.	Basic Salary Details:
   <table style="margin-left: 10rem; text-align: center;">
-    <tr><td>Pay Grade A</td><td>Pay Grade B</td><td>Tax Rate</td></tr>
+    <tr><th>Pay Grade A</th><th>Pay Grade B</th><th>Tax Rate</th></tr>
     <tr><td>10,000</td><td>	15,000</td><td>	10%</td></tr>
     <tr><td>20,000</td><td>25,000</td><td>15%</td></tr>
     <tr><td>30,000</td><td>35,000</td><td>20%</td></tr>
