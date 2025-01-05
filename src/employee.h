@@ -19,5 +19,6 @@ public:
   // add a new Payslip
   Payslip newPayslip(double basic_pay, double ot_hours){
     payslips.push_back(Payslip(name, basic_pay, ot_hours));
+    return payslips.back();
   }
 };
