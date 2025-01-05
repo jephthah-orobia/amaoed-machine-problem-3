@@ -1,26 +1,46 @@
-# C++ Programming Language | VS Code
+# AMAOEd: ITE7101: Computer Programming
+## Week 11 - Machine Problem 3
 
-This repository contains a development environment for Visual Studio code to be used by C++ Programming Language of AMA Online Education.
+Write a C++ program with the following specifications:
+1.	Create a class and name it **Payslip**.  This class should have the following attributes or properties: name, pay grade, basic salary, overtime hours, overtime pay, gross pay, net pay and withholding tax.  
+2.	Define the accessors and mutators of the Payslip class based on its attributes or properties.  This class should also have the following methods: determinePayGradeAndTaxRate and computePay.
+3.	Create another class and name it **Employee**.  This class will contain the main method.
+4.	In the main method, instantiate an object of the Payslip class.  Input the employee name, basic salary, and number of overtime (OT) hours.  These values must be set to the object of the Payslip class.  Apply validations for input as follows:\
+> a.	Basic salary should not be less than 10,000.\
+> b.	Minimum overtime hours is 1 hour.
+5.	Basic Salary Details:
+  <table style="margin-left: 10rem; text-align: center;">
+    <tr><td>Pay Grade A</td><td>Pay Grade B</td><td>Tax Rate</td></tr>
+    <tr><td>10,000</td><td>	15,000</td><td>	10%</td></tr>
+    <tr><td>20,000</td><td>25,000</td><td>15%</td></tr>
+    <tr><td>30,000</td><td>35,000</td><td>20%</td></tr>
+    <tr><td>40,000</td><td>45,000</td><td>25%</td></tr>
+    <tr><td>50,000</td><td>55,000</td><td>30%</td></tr>
+  </table>
 
-**Table of Contents**
+6.	The computation is as follows:
+Gross pay = basic salary + OT pay
+OT pay = no. of OT hours * 1% of basic salary
+Net pay = gross pay – withholding tax – fixed values
+Withholding tax = gross pay * tax rate 
+Note: Basic salary greater than or equal to 55,000 will have a pay grade of B and a tax rate of 30%.
 
-- [Getting Started](docs/getting-started/README.md)
-  - [Dev Container](docs/getting-started/dev-container/README.md)
-    - [Installing the Pre-requisites](docs/getting-started/dev-container/README.md#installing-the-pre-requisites)
-      - [Windows](docs/getting-started/dev-container/windows.md)
-      - [macOS](docs/getting-started/dev-container/osx.md)
-      - [Linux](docs/getting-started/dev-container/linux.md)
-    - [Configuring the Visual Studio Code](docs/getting-started/dev-container/README.md#configuring-the-visual-studio-code)
-    - [Cloning the Git Repository](docs/getting-started/dev-container/README.md#cloning-the-git-repository)
-    - [Opening in Dev Container](docs/getting-started/dev-container/README.md#opening-in-dev-container)
-  - [Bare Metal](docs/getting-started/bare-metal/README.md)
-    - [Installing the Pre-requisites](docs/getting-started/bare-metal/README.md#installing-the-pre-requisites)
-      - [Windows](docs/getting-started/bare-metal/windows.md)
-      - [macOS](docs/getting-started/bare-metal/osx.md)
-      - [Linux](docs/getting-started/bare-metal/linux.md)
-    - [Configuring the Visual Studio Code](docs/getting-started/bare-metal/README.md#configuring-the-visual-studio-code)
-    - [Cloning the Git Repository](docs/getting-started/bare-metal/README.md#cloning-the-git-repository)
-    - [Opening in Bare Metal](docs/getting-started/bare-metal/README.md#opening-in-bare-metal)
-- [Maintenace](docs/maintenance/README.md)
-  - [Updating the CMake Version](docs/maintenance/README.md#updating-the-cmake-version)
-  - [Updating the Dev Container Image](docs/maintenance/README.md#updating-the-dev-container-image)
+7.	The following are fixed values:
+>  SSS = 500.00\
+>  Pag-ibig = 200.00\
+>  Philhealth = 100.00
+
+8.	Output should contain the following:
+
+```
+Employee Name   : 
+Basic Salary    :
+Pay Grade       :
+No. of OT Hours :
+OT Pay          : 
+Gross Pay       : 
+Withholding Tax : 
+Net Pay         : 
+```
+
+>Note: Input of data and display of results should be defined on the main method. All monetary display should be formatted with comma separators, 2 decimal places, and “Php” (Ex: Php 32,546.95).
