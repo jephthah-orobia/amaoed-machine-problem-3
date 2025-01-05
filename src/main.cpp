@@ -3,7 +3,6 @@
  * @app name: AMAOEd Machine Problem 3
  * @app desc: To display payslips of employees
  * ****************************************************************/
-
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
@@ -11,6 +10,20 @@
 #include "employee.h"
 
 using namespace std;
+
+void displayPayslipInfo(Payslip p){
+  cout << endl << "========================================"
+         << endl << "Employee Name\t: " << p.getName() << endl
+         << "Basic Salary\t: " << p.getBasicSalarySTR() << endl
+         << "Pay Grade\t: " <<  p.getPayGradeStr() << endl
+         << "No. of OT Hours\t: " << p.getOvertimeHours() << endl
+         << "OT Pay\t\t: " << p.getOvertimePaySTR() << endl
+         << "Gross Pay\t: " << p.getGrossPaySTR() << endl
+         << "Withholding Tax\t: " << p.getWithholdingTaxSTR() << endl
+         << "Net Pay\t\t: " << p.getNetPaySTR()
+         << endl << "========================================"
+         << endl;
+}
 
 int main()
 {
@@ -23,35 +36,12 @@ int main()
   maria.newPayslip(34000, 1);
 
   for(const Payslip p: juan.getPayslips()){
-    cout << endl << "========================================"
-         << endl << "Employee Name\t: " << p.getName() << endl
-         << "Basic Salary\t: " << p.getBasicSalarySTR() << endl
-         << "Pay Grade\t: " <<  p.getPayGradeStr() << endl
-         << "No. of OT Hours\t: " << p.getOvertimeHours() << endl
-         << "OT Pay\t\t: " << p.getOvertimePaySTR() << endl
-         << "Gross Pay\t: " << p.getGrossPaySTR() << endl
-         << "Withholding Tax\t: " << p.getWithholdingTaxSTR() << endl
-         << "Net Pay\t\t: " << p.getNetPaySTR()
-         << endl << "========================================"
-         << endl;
+    displayPayslipInfo(p);
   }
 
   for(const Payslip p: maria.getPayslips()){
-    cout << endl << "========================================"
-         << endl << "Employee Name\t: " << p.getName() << endl
-         << "Basic Salary\t: " << p.getBasicSalarySTR() << endl
-         << "Pay Grade\t: " <<  p.getPayGradeStr() << endl
-         << "No. of OT Hours\t: " << p.getOvertimeHours() << endl
-         << "OT Pay\t\t: " << p.getOvertimePaySTR() << endl
-         << "Gross Pay\t: " << p.getGrossPaySTR() << endl
-         << "Withholding Tax\t: " << p.getWithholdingTaxSTR() << endl
-         << "Net Pay\t\t: " << p.getNetPaySTR()
-         << endl << "========================================"
-         << endl;
+    displayPayslipInfo(p);
   }
-
-
-
 
   cout << endl;
   _pause();
