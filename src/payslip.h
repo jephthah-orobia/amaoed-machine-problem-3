@@ -27,7 +27,7 @@ private:
   PayGrade pay_grade;
   double tax_rate;
 
-  // to be calculated each time `basic_salary` and `overtime_hours` is set
+  // to be calculated each time `basic_salary` or `overtime_hours` is set
   double overtime_pay;
   double gross_pay;
   double net_pay;

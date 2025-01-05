@@ -21,8 +21,7 @@ void displayPayslipInfo(Payslip p){
          << "Gross Pay\t: " << p.getGrossPaySTR() << endl
          << "Withholding Tax\t: " << p.getWithholdingTaxSTR() << endl
          << "Net Pay\t\t: " << p.getNetPaySTR()
-         << endl << "========================================"
-         << endl;
+         << endl << "========================================" << endl;
 }
 
 int main()
