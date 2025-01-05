@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Launch",
+            "name": "C++ Launch [container run]",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/build/main",
@@ -38,6 +38,29 @@
                 ],
                 "preLaunchTask": "[g++] Compile for Windows",
                 "miDebuggerPath": "C:/ProgramData/chocolatey/bin/gdb.exe"
+            }
+        },
+        {
+            "name": "C++ Launch [window local]",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/build/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": true,
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+                "preLaunchTask": "Local Windows Launch Tasks",
+                "miDebuggerPath": "C:/MinGW/bin/gdb.exe"
             }
         },
         {

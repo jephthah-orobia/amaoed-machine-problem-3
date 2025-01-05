@@ -92,6 +92,28 @@
                 "showReuseMessage": true,
                 "clear": false
             }
+        },
+        {
+            "label": "Create Directory for Local",
+            "type": "shell",
+            "command": "mkdir -p build",
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "Build Project for Local Windows",
+            "type": "shell",
+            "command": "g++ -std=c++11 -o build/main src/main.cpp",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOrder": "sequence",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Local Windows Launch Tasks",
+            "dependsOn": ["Create Directory for Local", "Build Project for Local Windows"],
+            "problemMatcher": []
         }
     ]
 }
