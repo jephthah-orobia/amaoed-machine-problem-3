@@ -114,7 +114,9 @@ public:
   double getBasicSalary() const { return basic_salary; }
 
   // get Basic Salary formatted as currency
-  std::string getBasicSalarySTR() const { return formatCurrency(basic_salary); }
+  std::string getBasicSalarySTR() const {
+    return formatCurrency(basic_salary);
+  }
 
   // get overtime hours
   double getOvertimeHours() const { return overtime_hours;}
@@ -123,7 +125,9 @@ public:
   double getFixedDeduction() const { return fixed_deduction;}
 
   // get fixed deductions formatted as currency
-  std::string getFixedDeductionSTR() const { return formatCurrency(fixed_deduction);}
+  std::string getFixedDeductionSTR() const {
+    return formatCurrency(fixed_deduction);
+  }
 
   // get gross pay
   double getGrossPay() const { return gross_pay; }
@@ -135,7 +139,9 @@ public:
   double getOvertimePay() const { return overtime_pay; }
 
   // get ot pay formatted as currency
-  std::string getOvertimePaySTR() const { return formatCurrency(overtime_pay); }
+  std::string getOvertimePaySTR() const {
+    return formatCurrency(overtime_pay);
+  }
 
   // get net pay
   double getNetPay() const { return net_pay;}
