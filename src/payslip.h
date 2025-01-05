@@ -1,6 +1,18 @@
 #include <iostream>
+#include <sstream>
+#include <iomanip>
+#include <locale>
 
 enum class PayGrade{ A, B };
+
+struct comma_separated : std::numpunct<char> {
+  virtual char do_thousands_spe() const {
+    return ',';
+  }
+  virtual std::string do_grouping() const {
+    return "\3";
+  }
+};
 
 class Payslip {
 private:
@@ -42,11 +54,21 @@ private:
     else
       tax_rate = 0.30;
   }
+
+
   void computePay(){
     overtime_pay = overtime_hours * 0.01 * basic_salary;
     gross_pay = basic_salary + overtime_pay;
     withholding_tax = gross_pay * tax_rate;
     net_pay = gross_pay - withholding_tax - fixed_deduction;
+  }
+
+  //format currency
+  std::string formatCurrency(double value) const {
+    std::ostringstream oss;
+    oss.imbue(std::locale(oss.getloc(), new comma_separated));
+    oss << std::fixed << std::setprecision(2) << value;
+    return "Php " + oss.str();
   }
 
 public:
@@ -77,13 +99,13 @@ public:
   std::string getPayGradeStr() const {
     switch(pay_grade){
       case PayGrade::A:
-        return "Pay Grade A";
+        return "A";
         break;
       case PayGrade::B:
-        return "Pay Grade B";
+        return "B";
         break;
       default:
-        return "Pay Grade Not Set";
+        return "Not Set";
         break;
     }
   }
@@ -91,23 +113,41 @@ public:
   // get Basic Salary
   double getBasicSalary() const { return basic_salary; }
 
+  // get Basic Salary formatted as currency
+  std::string getBasicSalarySTR() const { return formatCurrency(basic_salary); }
+
   // get overtime hours
   double getOvertimeHours() const { return overtime_hours;}
 
   // get fixed deductions
   double getFixedDeduction() const { return fixed_deduction;}
 
+  // get fixed deductions formatted as currency
+  std::string getFixedDeductionSTR() const { return formatCurrency(fixed_deduction);}
+
   // get gross pay
   double getGrossPay() const { return gross_pay; }
+
+  // get gross pay formatted as currency
+  std::string getGrossPaySTR() const { return formatCurrency(gross_pay); }
 
   // get ot pay
   double getOvertimePay() const { return overtime_pay; }
 
+  // get ot pay formatted as currency
+  std::string getOvertimePaySTR() const { return formatCurrency(overtime_pay); }
+
   // get net pay
   double getNetPay() const { return net_pay;}
 
+  // get net pay formatted as currency
+  std::string getNetPaySTR() const { return formatCurrency(net_pay);}
+
   // get withholding tax
   double getWithholdingTax() const { return overtime_pay; }
+
+  // get withholding tax formatted as currency
+  std::string getWithholdingTaxSTR() const { return formatCurrency(overtime_pay); }
   #pragma endregion Accessors
 
   #pragma region Mutators
