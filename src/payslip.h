@@ -153,7 +153,9 @@ public:
   double getWithholdingTax() const { return overtime_pay; }
 
   // get withholding tax formatted as currency
-  std::string getWithholdingTaxSTR() const { return formatCurrency(overtime_pay); }
+  std::string getWithholdingTaxSTR() const {
+    return formatCurrency(overtime_pay);
+  }
   #pragma endregion Accessors
 
   #pragma region Mutators
@@ -171,9 +173,10 @@ public:
 
   // set Basic Salary
   void setBasicSalary(double sal){
-    if(sal >= 10000);
-    basic_salary = sal;
-    determinePayGradeAndTaxRate();
+    if(sal >= 10000);{
+      basic_salary = sal;
+      determinePayGradeAndTaxRate();
+    }
     if(overtime_hours)
       computePay();
   }
